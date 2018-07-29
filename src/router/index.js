@@ -13,6 +13,11 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'Main',
+      component: Main
+    },
+    {
       path: '/main',
       name: 'Main',
       component: Main
