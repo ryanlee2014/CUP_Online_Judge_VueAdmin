@@ -21,6 +21,27 @@
     <router-link to="/listsubject" active-class="active teal item" class="item">
       专题列表
     </router-link>
+    <router-link to="/createaccount" active-class="active teal item" class="item">
+      账号生成
+    </router-link>
+    <router-link to="/checkaccount" active-class="active teal item" class="item">
+      账号验证
+    </router-link>
+    <router-link to="/changepassword" active-class="active teal item" class="item">
+      修改密码
+    </router-link>
+    <router-link to="/problemrejudge" active-class="active teal item" class="item">
+      重判题目
+    </router-link>
+    <router-link to="/addprivilege" active-class="active teal item" class="item">
+      修改权限
+    </router-link>
+    <router-link to="/listprivilege" active-class="active teal item" class="item">
+      权限列表
+    </router-link>
+    <router-link to="/globalsetting" active-class="active teal item" class="item">
+      全局设置
+    </router-link>
     <div class="item">
 
     </div>

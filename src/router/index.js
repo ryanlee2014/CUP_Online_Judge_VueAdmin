@@ -7,6 +7,13 @@ import AddContest from '@/views/addcontest'
 import ListContest from '@/views/listcontest'
 import AddSubject from '@/views/addsubject'
 import ListSubject from '@/views/listsubject'
+import AddPrivilege from '@/views/addprivilege'
+import ChangePassword from '@/views/changepassword'
+import CheckAccount from '@/views/checkaccount'
+import CreateAccount from '@/views/createaccount'
+import GlobalSetting from '@/views/globalsetting'
+import ListPrivilege from '@/views/listprivilege'
+import ProblemRejudge from '@/views/problemrejudge'
 
 Vue.use(Router)
 
@@ -51,6 +58,41 @@ export default new Router({
       path: '/listsubject',
       name: 'List Subject',
       component: ListSubject
+    },
+    {
+      path: '/addprivilege',
+      name: 'Add Privilege',
+      component: AddPrivilege
+    },
+    {
+      path: '/changepassword',
+      name: 'Change Password',
+      component: ChangePassword
+    },
+    {
+      path: '/checkaccount',
+      name: 'Check Account',
+      component: CheckAccount
+    },
+    {
+      path: '/createaccount',
+      name: 'Create Account',
+      component: CreateAccount
+    },
+    {
+      path: '/globalsetting',
+      name: 'Global Setting',
+      component: GlobalSetting
+    },
+    {
+      path: '/listprivilege',
+      name: 'List Privilege',
+      component: ListPrivilege
+    },
+    {
+      path: '/problemrejudge',
+      name: 'Problem Rejudge',
+      component: ProblemRejudge
     }
   ]
 })
