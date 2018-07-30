@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import axios from 'axios'
 import Router from 'vue-router'
 import Main from '@/views/main'
 import AddProblem from '@/views/addproblem'
@@ -14,10 +15,19 @@ import CreateAccount from '@/views/createaccount'
 import GlobalSetting from '@/views/globalsetting'
 import ListPrivilege from '@/views/listprivilege'
 import ProblemRejudge from '@/views/problemrejudge'
+import * as process from '../../.eslintrc'
+process.env.BUILD_TARGET = 'DEBUG'
+
+let store = {
+  state: {
+    login: false,
+    admin: false
+  }
+}
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -96,3 +106,38 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (process.env.BUILD_TARGET === 'DEBUG') {
+    next()
+  } else {
+    if (!store.state.login) {
+      axios('/api/privilege')
+        .then(res => {
+          if (res.status === 'OK') {
+            store.state.login = true
+            store.state.admin = res.data.admin
+            if (store.state.admin) {
+              next()
+            } else {
+              next(false)
+            }
+          } else {
+            alert('Server reject your request')
+          }
+        })
+        .catch(err => {
+          alert('fail to access privilege API')
+          console.error(err)
+        })
+    } else {
+      if (store.state.admin) {
+        next()
+      } else {
+        next(false)
+      }
+    }
+  }
+})
+
+export default router
