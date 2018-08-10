@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import SideMenu from '@/views/SideMenu'
+import SideMenu from '@/components/SideMenu'
 
 export default {
   name: 'App',
