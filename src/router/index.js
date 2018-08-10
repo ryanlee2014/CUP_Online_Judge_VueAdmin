@@ -1,21 +1,24 @@
 import Vue from 'vue'
 import axios from 'axios'
 import Router from 'vue-router'
-import Main from '@/views/main'
-import AddProblem from '@/views/addproblem'
-import ListProblem from '@/views/listproblem'
-import AddContest from '@/views/addcontest'
-import ListContest from '@/views/listcontest'
-import AddSubject from '@/views/addsubject'
-import ListSubject from '@/views/listsubject'
-import AddPrivilege from '@/views/addprivilege'
-import ChangePassword from '@/views/changepassword'
-import CheckAccount from '@/views/checkaccount'
-import CreateAccount from '@/views/createaccount'
-import GlobalSetting from '@/views/globalsetting'
-import ListPrivilege from '@/views/listprivilege'
-import ProblemRejudge from '@/views/problemrejudge'
+
 import * as process from '../../.eslintrc'
+
+const Main = () => import('@/views/main')
+const AddProblem = () => import('@/views/addproblem')
+const ListProblem = () => import('@/views/listproblem')
+const AddContest = () => import('@/views/addcontest')
+const ListContest = () => import('@/views/listcontest')
+const AddSubject = () => import('@/views/addsubject')
+const ListSubject = () => import('@/views/listsubject')
+const AddPrivilege = () => import('@/views/addprivilege')
+const ChangePassword = () => import('@/views/changepassword')
+const CheckAccount = () => import('@/views/checkaccount')
+const CreateAccount = () => import('@/views/createaccount')
+const GlobalSetting = () => import('@/views/globalsetting')
+const ListPrivilege = () => import('@/views/listprivilege')
+const ProblemRejudge = () => import('@/views/problemrejudge')
+
 process.env.BUILD_TARGET = 'DEBUG'
 
 let store = {
